@@ -5,12 +5,14 @@
     <title>ai-fitness</title>
 </head>
 <body>
-<a href="/member">member</a>
+회원 정보 읽기 GET 방식
+<a href="/member/read">member</a>
+<br>
 
-
-<form action="/member" method="post">
+<form action="/member/create" method="post">
+    회원 정보 생성 POST 방식
     Name: <input type="text" name="name"><br>
-    E-mail: <input type="text" name="email"><br>
+    ID: <input type="text" name="id"><br>
     <input type="submit">
 </form>
 

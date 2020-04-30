@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "ai-fitness-369",
+  "private_key_id": "4c7b8e5b5963828c810d2452830fa7f33e62d176",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDiHf9x587rGjc2\ndAVlGGBs+fKJ8zRIkwHgyOTIg4YGbHxSDFCj2MS3gE44fM1xfDNVtmqJjI1qzCEI\n9QAaeS8f5Np1bk0kS5I7pEHngN4K7ZDn7I4V6BQnBgATXGDxQa2C5YPsFPeKy8Wn\nYfJ6rmzVQvytT98mUls2+nXVrGDkStfgnqVsTmH2KylXYzkzI5oquQefVqsnsMFE\nSNeg+k63d+qY7lbeM9yY0p3FzE9upm+V1oIg+6xW7+BgRtC7TI0f9ZGvNUxN2Itt\neXnof4jikrEGjSxx0B3D67zEEl65HxXzsgxcc5DWwNqW+5FvElTQw15oJ6CoHGgO\nGbEPt4hLAgMBAAECggEAJ3h1Dr0YMZHx8V9vUaZfrqYy4EHD7qc6vLJUvWu4CYcG\nbIwZx4AfVqje/p1Kf3TewSeGkVwnk2zul1GtIvHkd/zK5ZTLgnpunFqf5nloSSAP\nG2z/oHNSkT1K5hZKFdMRJrhJvvwp+eB4MC+41BF+jfuTf+1hVp8prP8rcpEUmMTj\nyuWZCVrqj3ZFJ0UU7hWADXLm+OPkpLb9bnBoxHgAyU3AZapqPuwx8OuBnmW3hrdo\nUyclbZu7bHSF2nsCk7In/phOZqIEYbIxI50ZcGVbJiqzouHupVN3QKIQJIHqYopm\nNrsLG3hBADqWV6tRCypxZdvz35/sTXY2+umSMcTIAQKBgQDxHF8GV0uBExs8JRDI\nd7QpYg2V3U7eYX6Sm7YDAhfMGa75JoPbHhA3ukTPQhQdpo9hwV9WDrwzdvrKSg3Y\nQ+9iGtSONy9OIousB5R35KJG3VLUWnOdMizyL9uoFmGzWAGRyTDU2ee/8vJo050g\n9BKAeXA4a28U4omAjyHoldFvCwKBgQDwFJkLO/MJeLSFxwnXxwRtftjRF1v+tRuT\n3OVggYIUT2gOA4n+OhZgjELrS1e/pWJDqHAtZaVP3/VkhTI7zp7JQf1GzfGyLmAk\num6P2xMQWlUgCcg/9Xm2w9T8iun7H3yPPXPtm4isLgUT59ogffb0juFuaR9lKWlF\nosJ/5d8TwQKBgQDGdNrGRl4QfOCC7eNVjinNkjaqbwF2y3q6Q85ZxYQ+67j4vLn1\nRlaE+B2hFrul+C22gcrt86z3E2yzyqaAptJHxtvDvyqBvq+GRqru0FK9z3hY76aP\n8ffK1JeRT/LVApAwJhC6ci1t8hOTMvL3Z84+zzYOSmehIiGZnraDUaWUJwKBgQDe\nUTSnwov8aVpBx17GAfWHr773YLo/01YGRrfh9guO4zloQL64PPIb1cbiPJK1VWD5\nZjD62PWMUcfbnbw2xc8kb4cq2erHJUrCuCFJ9YRh0ESjtmtJTve21wGUGs8xTKb7\nvdxsW2rkhnkNRdYn4H2fWfBHXfFErGRfp6iU5zj8AQKBgGH2brsYs6rHZbnfcMFj\n/p7YQhc/UO23mSJOJeNK5RQohPFeatt/D/ztBFdQLoKW4i+ZUs3WaSP2SkByk+pA\novB4P4mbZXNX0jqN7NDQOGwuanFDBRLskj5s87d/fheHZLecUh7+l+apAREULMd1\nPiUf6l8cuhIytSqfzK9/ub98\n-----END PRIVATE KEY-----\n",
+  "client_email": "xla-369@ai-fitness-369.iam.gserviceaccount.com",
+  "client_id": "114618138023375035214",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/xla-369%40ai-fitness-369.iam.gserviceaccount.com"
+}

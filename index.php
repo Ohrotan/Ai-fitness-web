@@ -26,6 +26,9 @@ switch($src[0]){
     case '/member/delete' :
         require $user_url . '/delete.php';
         break;
+    case '/storage' :
+        require $home_url . '/storage.php';
+        break;
     default:
         http_response_code(404);
         require __DIR__ . '/src/error.html';
