@@ -1,41 +1,34 @@
 
 <?php
 
-include "dbconfig.php";
+$request = $_SERVER['REQUEST_URI'];
+//echo $_SERVER['REQUEST_URI']." ///// \n";
+//echo $_SERVER['QUERY_STRING']." ///// \n";
+$src = explode("?",$request);
 
-// Create connection
-$con=mysqli_connect($host,$username,$password,$dbname);
- 
-// Check connection
-if (mysqli_connect_errno())
-{
-  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+$home_url = __DIR__ . '/src';
+$user_url = $home_url . "/member";
+
+switch($src[0]){
+    case '':
+    case '/' :
+        require $home_url . '/home.html';
+        break;
+    case '/member/create' :
+        require $user_url . '/create.php';
+        break;
+    case '/member/read' :
+        require $user_url . '/read.php';
+        break;
+    case '/member/update' :
+        require $user_url . '/update.php';
+        break;
+    case '/member/delete' :
+        require $user_url . '/delete.php';
+        break;
+    default:
+        http_response_code(404);
+        require __DIR__ . '/src/error.html';
+        break;
 }
- 
-// Select all of our stocks from table 'stock_tracker'
-$sql = "SELECT * FROM member ";
- 
-// Confirm there are results
-if ($result = mysqli_query($con, $sql))
-{
- // We have results, create an array to hold the results
-        // and an array to hold the data
- $resultArray = array();
- $tempArray = array();
- 
- // Loop through each result
- while($row = $result->fetch_object())
- {
- // Add each result into the results array
- $tempArray = $row;
-     array_push($resultArray, $tempArray);
- }
- 
- // Encode the array to JSON and output the results
- echo json_encode($resultArray);
-}
- 
-// Close connections
-mysqli_close($con);
 ?>
-안녕@

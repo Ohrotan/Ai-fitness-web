@@ -25,7 +25,9 @@
     </logging>
     <filter>
         <whitelist>
+            <directory suffix=".php">src</directory>
             <file>index.php</file>
+            <file>member.php</file>
             <exclude>
               <directory>./vendor</directory>
             </exclude>

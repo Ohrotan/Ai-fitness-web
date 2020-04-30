@@ -34,4 +34,15 @@ class DeployTest extends TestCase
         );
         $this->assertContains('hello world!', (string) $resp->getBody());
     }
+    public function testMember()
+    {
+        $resp = $this->client->get('/read.php');
+
+        $this->assertEquals(
+            '200',
+            $resp->getStatusCode(),
+            'Top page status code should be 200'
+        );
+        $this->assertContains('hello world!', (string) $resp->getBody());
+    }
 }
