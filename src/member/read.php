@@ -5,30 +5,30 @@ include "dbconfig.php";
 
 $name = $_GET[name]; //$_POST[name];
 $id = $_GET[id];
+/*
+$sql = 'SELECT * from member';
+$stmt = $db->prepare($sql);
+$stmt->execute();
+$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-$sql = "SELECT * FROM member";
 
-
-if ($result = mysqli_query($con, $sql))
+if ($results->rowCount() > 0)
 {
-    // We have results, create an array to hold the results
-    // and an array to hold the data
-    $resultArray = array();
-    $tempArray = array();
+  foreach ($results as $row){
+        echo $row[id]."/".$row[name]."<br>";
+}
+    // Encode the array to JSON and output the results
+    //echo json_encode($results);
+}
+*/
+$results = $db->query('SELECT * from member');
 
-    // Loop through each result
-    while($row = $result->fetch_object())
-    {
-        // Add each result into the results array
-        $tempArray = $row;
-        array_push($resultArray, $tempArray);
+if ($results->rowCount() > 0)
+{
+    foreach ($results as $row){
+        echo $row[id]."/".$row[name]."<br>";
     }
 
-    // Encode the array to JSON and output the results
-    echo json_encode($resultArray);
 }
-
-// Close connections
-mysqli_close($con);
-
+echo json_encode($results->fetchAll());
 ?>
