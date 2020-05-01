@@ -8,13 +8,8 @@ $id = $_GET[id];
 $intro = $_GET[intro]; // $_POST[intro];
 
 $sql = "UPDATE member SET intro = '$intro' WHERE id = '$id'";
-
-
-$result = mysqli_query($con, $sql);
-
+$stmt = $db->prepare($sql);
+$result = $stmt->execute();
 echo $result;
-
-// Close connections
-mysqli_close($con);
 
 ?>
