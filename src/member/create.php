@@ -21,16 +21,13 @@ $stmt->execute();
 
 $results = $db->query('SELECT * from member');
 
+if ($results->rowCount() > 0)
+{
+    foreach ($results as $row){
+        echo $row[id]."/".$row[name]."<br>";
+    }
+
+}
+
 ?>
 
-<html>
-<body>
-<?php if ($results->rowCount() > 0): ?>
-    <h2>Member</h2>
-    <?php foreach ($results as $row): ?>
-        <div><strong> <?= $row['id'] ?></strong>: <?= $row['name'] ?></div>
-    <?php endforeach ?>
-<?php endif ?>
-
-</body>
-</html>
