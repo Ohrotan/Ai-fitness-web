@@ -4,6 +4,10 @@
 $request = $_SERVER['REQUEST_URI'];
 //echo $_SERVER['REQUEST_URI']." ///// \n";
 //echo $_SERVER['QUERY_STRING']." ///// \n";
+//echo $_SERVER['REMOTE_ADDR']." ///// \n";
+//echo $_SERVER['REMOTE_HOST']." ///// \n";
+//echo $_SERVER['SERVER_ADDR']." ///// \n";
+
 $src = explode("?",$request);
 
 $home_url = __DIR__ . '/src';
