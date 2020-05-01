@@ -10,12 +10,14 @@ $storage = new StorageClient([
 
 $bucket = $storage->bucket('ai-fitness');
 
+
+
+//----아래는 예시 코드-----
 // Download and store an object from the bucket locally.
 $object = $bucket->object('php.txt');
 $object->downloadToFile('/php.txt');
+
 echo $object->name();
-print_r($object->info());
-echo "//\n\n\n";
 echo $object->downloadAsString();
 
 
@@ -23,6 +25,7 @@ echo $object->downloadAsString();
 $bucket->upload(
     fopen('/srv/test.txt', 'r')
 );
+
 
 // Using Predefined ACLs to manage object permissions, you may
 // upload a file and give read access to anyone with the URL.

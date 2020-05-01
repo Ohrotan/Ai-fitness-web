@@ -1,4 +1,3 @@
-
 <?php
 
 $request = $_SERVER['REQUEST_URI'];
@@ -8,12 +7,13 @@ $request = $_SERVER['REQUEST_URI'];
 //echo $_SERVER['REMOTE_HOST']." ///// \n";
 //echo $_SERVER['SERVER_ADDR']." ///// \n";
 
-$src = explode("?",$request);
+$src = explode("?", $request);
 
 $home_url = __DIR__ . '/src';
 $user_url = $home_url . "/member";
+$video_url = $home_url . "/video";
 
-switch($src[0]){
+switch ($src[0]) {
     case '':
     case '/' :
         require $home_url . '/home.html';
@@ -32,6 +32,9 @@ switch($src[0]){
         break;
     case '/storage' :
         require $home_url . '/storage.php';
+        break;
+    case '/video/tr_video_create' :
+        require $video_url . '/tr_video_create.php';
         break;
     default:
         http_response_code(404);
