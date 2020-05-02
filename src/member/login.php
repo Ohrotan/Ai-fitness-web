@@ -36,6 +36,8 @@ echo isTheseParametersAvailable(array('email', 'password'));
 
         echo "333333<br />";
 
+        $id = null;
+        $pwd = null;
         //결과 저장을 위해 준비된 쿼리의 결과 컬럼에 알맞게 변수를 바인드함.
         $stmt->bind_result($id, $pwd);
 
