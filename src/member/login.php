@@ -1,7 +1,7 @@
 <?php
 
 include "dbconfig.php";
-include_once "paramsCheck.php";
+include_once "src/paramsCheck.php";
 
 //응답으로 보낼 배열 생성
 $response = array();
