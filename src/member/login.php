@@ -55,6 +55,7 @@ if(isTheseParametersAvailable(array('email', 'password'))) {
     }
 }
 
+
 //json 구조로 응답 표시
 echo json_encode($response);
 
