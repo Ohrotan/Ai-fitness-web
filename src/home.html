@@ -7,7 +7,6 @@
 <body>
 회원 정보 읽기 GET 방식
 <a href="/member/read">member</a>
-<a href="/member/temp">temp</a>
 <br>
 
 <form action="/member/create" method="post">
@@ -24,6 +23,14 @@
     <input type="file" name="myFile" id="myFile" />
     <br />
     <input type="submit" name="submit" value="Submit" />
+</form>
+
+<br><br>
+<form action="/member/login" method="post">
+    회원 정보 생성 POST 방식
+    email: <input type="text" name="email"><br>
+    password: <input type="text" name="password"><br>
+    <input type="submit">
 </form>
 
 
