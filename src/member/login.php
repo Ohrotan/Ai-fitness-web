@@ -5,11 +5,13 @@ include_once "paramsCheck.php";
 
 $email = $_POST['email'];
 $password = $_POST['password'];
-$response['error'] = false;
-$response['message'] = 'Login successfull';
 
 //응답으로 보낼 배열 생성
 $response = array();
+
+
+$response['error'] = false;
+$response['message'] = 'Login successfull';
 //
 ////로그인하려면 사용자 id와 pwd가 필요함
 //if(isTheseParametersAvailable(array('email', 'password'))) {
