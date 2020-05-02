@@ -8,8 +8,10 @@ $response = array();
 
 echo "11111<br />";
 
+echo isTheseParametersAvailable(array('email', 'password'));
+
 //로그인하려면 사용자 id와 pwd가 필요함
-if(isTheseParametersAvailable(array('email', 'password'))) {
+//if(isTheseParametersAvailable(array('email', 'password'))) {
 
     echo "22222<br />";
 
@@ -61,7 +63,7 @@ if(isTheseParametersAvailable(array('email', 'password'))) {
         $response['error'] = true;
         $response['message'] = 'Invalid username or password';
     }
-}
+//}
 
 
 //json 구조로 응답 표시
