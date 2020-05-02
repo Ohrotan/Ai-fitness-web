@@ -6,9 +6,14 @@ include_once "paramsCheck.php";
 //응답으로 보낼 배열 생성
 $response = array();
 
+echo "11111</ br>";
 
 //로그인하려면 사용자 id와 pwd가 필요함
 if(isTheseParametersAvailable(array('email', 'password'))) {
+
+    echo "22222</ br>";
+
+
     //받은 값들을 넣어줌
     $email = $_POST['email'];
     $password = md5($_POST['password']);
@@ -23,6 +28,8 @@ if(isTheseParametersAvailable(array('email', 'password'))) {
 
     //사용자가 존재하는 경우. num_rows는 명령문 결과 세트의 행 수를 리턴하기 때문에 0보다 크면 존재하는 것.
     if ($stmt->num_rows > 0) {
+
+        echo "333333</ br>";
 
         //결과 저장을 위해 준비된 쿼리의 결과 컬럼에 알맞게 변수를 바인드함.
         $stmt->bind_result($id, $pwd, $name, $height, $weight, $gender, $birth, $muscle, $fat, $intro, $image, $trainer, $andmin, $alarm);
