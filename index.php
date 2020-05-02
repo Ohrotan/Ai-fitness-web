@@ -30,6 +30,9 @@ switch ($src[0]) {
     case '/member/delete' :
         require $user_url . '/delete.php';
         break;
+    case '/member/login' :
+        require $user_url . '/login.php';
+        break;
     case '/storage' :
         require $home_url . '/storage.php';
         break;
