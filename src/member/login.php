@@ -21,7 +21,8 @@ echo isTheseParametersAvailable(array('email', 'password'));
     $password = md5($_POST['password']);
 
     //쿼리 생성
-    $stmt = $db->prepare("SELECT id, pwd, name, height, weight, gender, birth, muscle, fat, intro, image, trainer, andmin, alarm  FROM Member WHERE username = ? AND password = ?");
+    //$stmt = $db->prepare("SELECT id, pwd, name, height, weight, gender, birth, muscle, fat, intro, image, trainer, andmin, alarm  FROM Member WHERE username = ? AND password = ?");
+    $stmt = $db->prepare("SELECT id, pwd FROM member WHERE id = ? AND pwd = ?");
     $stmt->bind_param("ss", $email, $password);
 
     $stmt->execute();//생성한 쿼리를 실행
@@ -34,25 +35,25 @@ echo isTheseParametersAvailable(array('email', 'password'));
         echo "333333<br />";
 
         //결과 저장을 위해 준비된 쿼리의 결과 컬럼에 알맞게 변수를 바인드함.
-        $stmt->bind_result($id, $pwd, $name, $height, $weight, $gender, $birth, $muscle, $fat, $intro, $image, $trainer, $andmin, $alarm);
+        $stmt->bind_result($id, $pwd);
 
         $stmt->fetch(); //쿼리의 결과를 바인딩된 변수로 가져온다.
 
         $user = array(
             'id' => $id,
             'pwd' => $pwd,
-            'name' => $name,
-            'height' => $height,
-            'weight' => $weight,
-            'gender' => $gender,
-            'birth' => $birth,
-            'muscle' => $muscle,
-            'fat' => $fat,
-            'intro' => $intro,
-            'image' => $image,
-            'trainer' => $trainer,
-            'andmin' => $andmin,
-            'alarm' => $alarm
+            'name' => null,
+            'height' => 0,
+            'weight' => 0,
+            'gender' => 0,
+            'birth' => null,
+            'muscle' => 0,
+            'fat' => 0,
+            'intro' => null,
+            'image' => null,
+            'trainer' => 0,
+            'andmin' => 0,
+            'alarm' => 0
         );
 
         $response['error'] = false;
@@ -66,6 +67,7 @@ echo isTheseParametersAvailable(array('email', 'password'));
         $response['message'] = 'Invalid username or password';
     }
 //}
+
 
 
 //json 구조로 응답 표시
