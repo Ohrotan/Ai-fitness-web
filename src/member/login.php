@@ -3,6 +3,8 @@
 include "dbconfig.php";
 include_once "paramsCheck.php";
 
+echo "hi";
+
 $email = $_POST['email'];
 $password = $_POST['password'];
 
