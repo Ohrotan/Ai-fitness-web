@@ -21,6 +21,8 @@ if(isTheseParametersAvailable(array('email', 'password'))) {
 
     echo $email . "<br />";
 
+    //**********여기 이하는 수행이 안되는 이유를 모르겠음
+    
     //쿼리 생성
     //$stmt = $db->prepare("SELECT id, pwd, name, height, weight, gender, birth, muscle, fat, intro, image, trainer, andmin, alarm  FROM Member WHERE username = ? AND password = ?");
     $stmt =  $db->stmt_init();
