@@ -59,6 +59,8 @@ echo isTheseParametersAvailable(array('email', 'password'));
         $response['message'] = 'Login successfull';
         $response['user'] = $user;
     } else {
+        echo "4444444<br />";
+
         //유저가 존재하지 않는경우
         $response['error'] = true;
         $response['message'] = 'Invalid username or password';
