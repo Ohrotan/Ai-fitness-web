@@ -19,6 +19,9 @@
 <br><br>
 <div>비디오 업로드 테스트</div>
 <form action="/video/tr_video_create" method="post" enctype="multipart/form-data">
+    trainer id: <input type="text" name="trainer_id" value="test_trainer_id"><br>
+    title: <input type="text" name="title" value="test_title"><br>
+    thumb_img_path: <input type="text" name="thumb_img" value="test_thumb_img_path"><br>
     <label for="myFile"><span>Filename:</span></label>
     <input type="file" name="myFile" id="myFile" />
     <br />
@@ -26,10 +29,10 @@
 </form>
 
 <br><br>
-<form action="/member/login" method="post">
+<form action="/member/signup" method="post">
     회원 정보 생성 POST 방식
-    email: <input type="text" name="email"><br>
-    password: <input type="text" name="password"><br>
+    email: <input type="text" name="id"><br>
+    password: <input type="text" name="pwd"><br>
     <input type="submit">
 </form>
 
