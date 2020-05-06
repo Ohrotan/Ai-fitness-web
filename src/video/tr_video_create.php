@@ -1,23 +1,23 @@
 <?php
 require 'vendor/autoload.php';
+include "dbconfig.php";
 
 use Google\Cloud\Storage\StorageClient;
 
-$dir = sys_get_temp_dir();
-echo $dir."    ";
-$tmp = tempnam($dir, "foo");
-echo $tmp;
-file_put_contents($tmp, "hello");
-$f = fopen($tmp, "a");
-fwrite($f, " world");
-fclose($f);
-echo file_get_contents($tmp);
+$trainer_id = $_POST[trainer_id]; //$_POST[name];
+$title = $_POST[title]; //$_POST[name];
+$thumb_img = $_POST[thumb_img];
+$video ="ai-fitness/".$video_file_name;
 
-echo "<br><br><br>";
+
+//1번 방법
+$sql = "INSERT INTO trainer_video (trainer_id, thumb_img, video, title) VALUES ('$trainer_id','$thumb_img','$video','$title')";
+echo $sql."<br>";
+
 
 $allowedExts = array("jpg", "jpeg", "gif", "png", "mp3", "mp4", "wma");
 $extension = pathinfo($_FILES['myFile']['name'], PATHINFO_EXTENSION);
-
+$video_file_name =  "1".$_FILES["myFile"]["name"];
 
 if ((($_FILES["myFile"]["type"] == "video/mp4")
         || ($_FILES["myFile"]["type"] == "audio/mp3")
@@ -29,7 +29,7 @@ if ((($_FILES["myFile"]["type"] == "video/mp4")
     if ($_FILES["myFile"]["error"] > 0) {
         echo "Return Code: " . $_FILES["myFile"]["error"] . "<br />";
     } else {
-        echo "Upload: " . $_FILES["myFile"]["name"] . "<br />";
+        echo "Upload: " . $video_file_name. "<br />";
         echo "Type: " . $_FILES["myFile"]["type"] . "<br />";
         echo "Size: " . ($_FILES["myFile"]["size"] / 1024) . " Kb<br />";
         echo "Temp file: " . $_FILES["myFile"]["tmp_name"] . "<br />";
@@ -46,11 +46,10 @@ if ((($_FILES["myFile"]["type"] == "video/mp4")
         ]);
 
         $bucket = $storage->bucket('ai-fitness');
-
          $bucket->upload(fopen($_FILES["myFile"]["tmp_name"], 'r'), [
-            'name' => $_FILES["myFile"]["name"]
+            'name' => $video_file_name
          ]);
-
+/*
         if (file_exists("/static/video/" . $_FILES["myFile"]["name"])) {
             echo $_FILES["myFile"]["name"] . " already exists. ";
         } else {
@@ -62,8 +61,34 @@ if ((($_FILES["myFile"]["type"] == "video/mp4")
                 echo "Not uploaded because of error #" . $_FILES["myFile"]["error"];
             }
         }
+*/
+        //db에도 업로드
+        $id = 2;
+        $trainer_id = $_POST[trainer_id]; //$_POST[name];
+        $title = $_POST[title]; //$_POST[name];
+        $thumb_img = $_POST[thumb_img];
+        $video ="ai-fitness/".$video_file_name;
 
 
+//1번 방법
+        $sql = "INSERT INTO trainer_video (id,trainer_id, thumb_img, video, title) VALUES ('$id','$trainer_id','$thumb_img','$video','$title')";
+        echo $sql."<br>";
+        $stmt = $db->prepare($sql);
+        $result = $stmt->execute();
+
+        echo $result;
+
+        $results = $db->query('SELECT * from trainer_video');
+        $result_array = array();
+        if ($results->rowCount() > 0)
+        {
+            foreach ($results as $row){
+                echo $row[trainer_id]."/".$row[title]."/".$row[video]."<br>";
+                array_push($result_array,$row);
+            }
+
+        }
+        echo json_encode($result_array);
 
     }
 } else {
