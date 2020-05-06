@@ -8,5 +8,6 @@ $id = $_POST['id'];
 
 array_push($result_array, $id);
 
-echo json_encode($result_array);
+$result_object = $result_array;
+echo json_encode($result_object);
 ?>
