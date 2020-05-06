@@ -75,8 +75,8 @@ include_once "src/paramsCheck.php";
 //}
 
 
-$id = $_GET[id]; //$_POST[name];
-$pwd = $_GET[pwd];
+$id = $_POST['id']; //$_POST[name];
+$pwd = $_POST['pwd'];
 
 $results = $db->query("SELECT * from member WHERE id = '$id' AND pwd = '$pwd'");
 $result_array = array();
