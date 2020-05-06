@@ -7,11 +7,11 @@
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://35.221.64.95:3306/ai_fitness</jdbc-url>
     </data-source>
-    <data-source source="LOCAL" name="ai_fitness@35.221.64.95" uuid="8462d0c9-ab59-4915-b52e-31130beea03b">
+    <data-source source="LOCAL" name="ai_fitness@35.234.33.199" uuid="af4acf1f-209e-4cef-b73e-2584f82bd65d">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://35.221.64.95:3306/ai_fitness</jdbc-url>
+      <jdbc-url>jdbc:mysql://35.234.33.199:3306/ai_fitness</jdbc-url>
     </data-source>
   </component>
 </project>
