@@ -3,6 +3,21 @@
 include "dbconfig.php";
 include_once "src/paramsCheck.php";
 
+$email = $_POST['email'];
+$pwd = $_POST['pwd'];
+
+$results = $db->query("SELECT * from member WHERE email = '$email' AND pwd = '$pwd'");
+$result_array = array();
+if ($results->rowCount() > 0)
+{
+    foreach ($results as $row){
+        array_push($result_array,$row);
+    }
+
+}
+echo json_encode($result_array);
+
+
 ////응답으로 보낼 배열 생성
 //$response = array();
 //
@@ -73,21 +88,6 @@ include_once "src/paramsCheck.php";
 //        $response['message'] = 'Invalid username or password';
 //    }
 //}
-
-
-$id = $_POST['id']; //$_POST[name];
-$pwd = $_POST['pwd'];
-
-$results = $db->query("SELECT * from member WHERE id = '$id' AND pwd = '$pwd'");
-$result_array = array();
-if ($results->rowCount() > 0)
-{
-    foreach ($results as $row){
-        array_push($result_array,$row);
-    }
-
-}
-echo json_encode($result_array);
 
 
 ////json 구조로 응답 표시
