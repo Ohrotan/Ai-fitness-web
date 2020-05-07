@@ -26,12 +26,11 @@ $result_array = array();
 if ($results->rowCount() > 0)
 {
     foreach ($results as $row){
-        echo $row[id]."/".$row[mem_id]."<br>";
         array_push($result_array,$row);
     }
 
 }
 
-echo json_encode($result_array);
+echo json_encode(array("result"=>$result_array));
 
 ?>
