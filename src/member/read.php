@@ -21,6 +21,7 @@ if ($results->rowCount() > 0)
     //echo json_encode($results);
 }
 */
+
 $results = $db->query('SELECT * from member');
 $result_array = array();
 if ($results->rowCount() > 0)
