@@ -12,13 +12,13 @@ $video ="ai-fitness/".$video_file_name;
 
 //1번 방법
 $sql = "INSERT INTO trainer_video (trainer_id, thumb_img, video, title) VALUES ('$trainer_id','$thumb_img','$video','$title')";
-echo $sql."<br>";
+//echo $sql."<br>";
 
 
 $allowedExts = array("jpg", "jpeg", "gif", "png", "mp3", "mp4", "wma");
 $extension = pathinfo($_FILES['myFile']['name'], PATHINFO_EXTENSION);
 $video_file_name =  "1".$_FILES["myFile"]["name"];
-
+echo $_FILES["myFile"]["type"]."  ";
 if ((($_FILES["myFile"]["type"] == "video/mp4")
         || ($_FILES["myFile"]["type"] == "audio/mp3")
         || ($_FILES["myFile"]["type"] == "audio/wma")
@@ -71,7 +71,7 @@ if ((($_FILES["myFile"]["type"] == "video/mp4")
 
 
 //1번 방법
-        $sql = "INSERT INTO trainer_video (id,trainer_id, thumb_img, video, title) VALUES ('$id','$trainer_id','$thumb_img','$video','$title')";
+        $sql = "INSERT INTO trainer_video (trainer_id, thumb_img, video, title) VALUES ('$trainer_id','$thumb_img','$video','$title')";
         echo $sql."<br>";
         $stmt = $db->prepare($sql);
         $result = $stmt->execute();

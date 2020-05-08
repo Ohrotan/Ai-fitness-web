@@ -23,6 +23,7 @@ if ($results->rowCount() > 0)
 */
 
 $results = $db->query('SELECT * from member');
+
 $result_array = array();
 
 var_dump($results->rowCount());
