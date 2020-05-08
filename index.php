@@ -24,6 +24,9 @@ switch ($src[0]) {
     case '/member/read' :
         require $user_url . '/read.php';
         break;
+    case '/member/readmemexrprogram' :
+        require $user_url . '/readmemexrprogram.php';
+        break;
     case '/member/update' :
         require $user_url . '/update.php';
         break;
@@ -35,6 +38,9 @@ switch ($src[0]) {
         break;
     case '/member/signup' :
         require $user_url . '/signup.php';
+        break;
+    case '/member/homeData' :
+        require $user_url . '/homeData.php';
         break;
     case '/storage' :
         require $home_url . '/storage.php';
