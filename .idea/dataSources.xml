@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="ai_fitness" uuid="71a48a7a-9301-4b03-99a5-2fa89e1863cc">
+    <data-source source="LOCAL" name="ai_fitness" uuid="8785bc29-d044-4cc1-990f-3ec2001e5ea5">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://35.221.64.95:3306/ai_fitness</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="ai_fitness@35.221.64.95" uuid="9a42f4e2-08b0-4a70-9707-4c7ad7c1018e">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
