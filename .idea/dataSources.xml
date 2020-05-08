@@ -13,6 +13,7 @@
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://35.221.64.95:3306/ai_fitness</jdbc-url>
     </data-source>
+
     <data-source source="LOCAL" name="MySQL - @localhost" uuid="44b1548e-5db6-486d-9008-0fa3f821d477">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
