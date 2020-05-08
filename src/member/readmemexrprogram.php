@@ -21,7 +21,7 @@ if ($results->rowCount() > 0)
     //echo json_encode($results);
 }
 */
-$results = $db->query('SELECT * from member_reg_program');
+$results = $db->query('SELECT m2.name, title, level, max, rating from member as m, member as m2, exr_program as e, member_reg_program as mrp where m.id = mrp.mem_id and e.id = mrp.exr_id and e.trainer_id = m2.id');
 $result_array = array();
 if ($results->rowCount() > 0)
 {
