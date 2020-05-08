@@ -24,6 +24,11 @@ if ($results->rowCount() > 0)
 
 $results = $db->query('SELECT * from member');
 $result_array = array();
+
+var_dump($results->rowCount());
+echo("<br>");
+array_push($result_array, $results->rowCount());
+
 if ($results->rowCount() > 0)
 {
     foreach ($results as $row){
