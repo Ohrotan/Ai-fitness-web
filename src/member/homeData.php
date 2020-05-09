@@ -14,7 +14,7 @@ if ($trainer === 1) { //요청 유저가 트레이너라면 트레이너가 등�
 }
 else {//트레이너가 아니라면 신청한 프로그램 정보를 전송함.
     //*****여기 쿼리 부분 수정해야함
-    $results = $db->query("select name, title from trainer as t join exr_program as e on t.id = e.trainer_id where t.id = '$user_id' limit 3");
+    $results = $db->query("select t.name, e.title from member_reg_program m join (trainer t join exr_program e on t.id = e.trainer_id) on e.id = m.exr_id  where m.mem_id = '$user_id' limit 3");
 }
 
 array_push($result_array, $results->rowCount());//쿼리 결과 row 개수를 같이 전송함
