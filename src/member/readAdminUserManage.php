@@ -12,7 +12,7 @@ $result_array = array();
 
 //var_dump($results->rowCount());
 //echo("<br>");
-array_push($result_array, $results->rowCount());
+//array_push($result_array, $results->rowCount());
 
 if ($results->rowCount() > 0)
 {
