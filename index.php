@@ -21,6 +21,9 @@ switch ($src[0]) {
     case '/member/create' :
         require $user_url . '/create.php';
         break;
+    case '/member/exrDetail' :
+        require $user_url . '/exrDetail.php';
+        break;
     case '/member/read' :
         require $user_url . '/read.php';
         break;
