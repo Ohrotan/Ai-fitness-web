@@ -11,7 +11,7 @@ $results = $db->query('SELECT name, trainer FROM member');
 $result_array = array();
 
 //var_dump($results->rowCount());
-echo("<br>");
+//echo("<br>");
 array_push($result_array, $results->rowCount());
 
 if ($results->rowCount() > 0)
