@@ -57,6 +57,9 @@ switch ($src[0]) {
     case '/member/readTrainerList' :
         require $user_url . '/readTrainerList.php';
         break;
+    case '/member/readTrainerRating' :
+        require $user_url . '/readTrainerRating.php';
+        break;
     case '/storage' :
         require $home_url . '/storage.php';
         break;

@@ -7,7 +7,7 @@ $name = $_GET[name];
 
 //$sql = "select name, trainer from member";
 
-$results = $db->query('SELECT name FROM member WHERE trainer = 1');
+$results = $db->query('select name, avg_rating from trainer_rating tr join member m where tr.trainer_id = m.id');
 $result_array = array();
 
 //var_dump($results->rowCount());
