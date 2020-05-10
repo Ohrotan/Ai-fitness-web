@@ -7,7 +7,7 @@ use Google\Cloud\Storage\StorageClient;
 $trainer_id = $_POST[trainer_id]; //$_POST[name];
 $title = $_POST[title]; //$_POST[name];
 $thumb_img = $_POST[thumb_img];
-$video ="ai-fitness/".$video_file_name;
+$video ="ai-fitness/".$image_file_name;
 
 
 //1번 방법

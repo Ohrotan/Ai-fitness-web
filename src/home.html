@@ -29,10 +29,13 @@
 </form>
 
 <br><br>
-<form action="/member/homeData" method="post">
+<form action="/member/test" method="post" enctype="multipart/form-data">
     홈 화면 테스트
-    email: <input type="text" name="user_id"><br>
-    password: <input type="text" name="trainer"><br>
+    <label for="file">Filename:</label>
+    <input type="file" name="file" id="file"><br>
+    email: <input type="text" name="email"><br>
+    pwd: <input type="text" name="pwd"><br>
+
     <input type="submit">
 </form>
 
