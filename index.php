@@ -48,6 +48,9 @@ switch ($src[0]) {
     case '/member/homeData' :
         require $user_url . '/homeData.php';
         break;
+    case '/member/test' :
+        require $user_url . '/test.php';
+        break;
     case '/member/readAdminUserManage' :
         require $user_url . '/readAdminUserManage.php';
         break;

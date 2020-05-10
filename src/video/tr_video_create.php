@@ -5,6 +5,16 @@ include "dbconfig.php";
 use Google\Cloud\Storage\StorageClient;
 
 
+$trainer_id = $_POST[trainer_id]; //$_POST[name];
+$title = $_POST[title]; //$_POST[name];
+$thumb_img = $_POST[thumb_img];
+$video ="ai-fitness/".$image_file_name;
+
+
+//1번 방법
+$sql = "INSERT INTO trainer_video (trainer_id, thumb_img, video, title) VALUES ('$trainer_id','$thumb_img','$video','$title')";
+//echo $sql."<br>";
+
 $allowedExts = array("jpg", "jpeg", "gif", "png", "mp3", "mp4", "wma");
 $extension = pathinfo($_FILES['myFile']['name'], PATHINFO_EXTENSION);
 $video_file_name =  "tr_video/".$_FILES["myFile"]["name"];
