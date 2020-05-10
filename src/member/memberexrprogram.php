@@ -1,7 +1,9 @@
-
 <?php
 
 include "dbconfig.php";
+
+$id = $_GET[id]; //$_POST[name];
+$mem_id = $_GET[$mem_id];
 /*
 $sql = 'SELECT * from member';
 $stmt = $db->prepare($sql);
@@ -18,7 +20,7 @@ if ($results->rowCount() > 0)
     //echo json_encode($results);
 }
 */
-$results = $db->query("SELECT period, equip, gender, level, max, intro from exr_program where title = '체지방 태우기'");
+$results = $db->query('SELECT name, title, start_date, end_date from member as m, exr_program as e, member_reg_program as mrp where mrp.exr_id = e.id and e.trainer_id = m.id');
 $result_array = array();
 if ($results->rowCount() > 0)
 {

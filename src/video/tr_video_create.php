@@ -4,6 +4,7 @@ include "dbconfig.php";
 
 use Google\Cloud\Storage\StorageClient;
 
+
 $trainer_id = $_POST[trainer_id]; //$_POST[name];
 $title = $_POST[title]; //$_POST[name];
 $thumb_img = $_POST[thumb_img];
@@ -14,18 +15,11 @@ $video ="ai-fitness/".$image_file_name;
 $sql = "INSERT INTO trainer_video (trainer_id, thumb_img, video, title) VALUES ('$trainer_id','$thumb_img','$video','$title')";
 //echo $sql."<br>";
 
-
 $allowedExts = array("jpg", "jpeg", "gif", "png", "mp3", "mp4", "wma");
 $extension = pathinfo($_FILES['myFile']['name'], PATHINFO_EXTENSION);
-$video_file_name =  "1".$_FILES["myFile"]["name"];
+$video_file_name =  "tr_video/".$_FILES["myFile"]["name"];
 
-if (true||(($_FILES["myFile"]["type"] == "video/mp4")
-        || ($_FILES["myFile"]["type"] == "audio/mp3")
-        || ($_FILES["myFile"]["type"] == "audio/wma")
-        || ($_FILES["myFile"]["type"] == "image/pjpeg")
-        || ($_FILES["myFile"]["type"] == "image/gif")
-        || ($_FILES["myFile"]["type"] == "image/jpeg"))
-    && ($_FILES["myFile"]["size"] < 100*1024*1024)) {
+
     if ($_FILES["myFile"]["error"] > 0) {
 
         echo "Return Code: " . $_FILES["myFile"]["error"] . "<br />";
@@ -92,6 +86,4 @@ if (true||(($_FILES["myFile"]["type"] == "video/mp4")
         echo json_encode($result_array);
 
     }
-} else {
-    echo "Invalid file";
-}
+
