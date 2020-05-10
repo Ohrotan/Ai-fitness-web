@@ -54,6 +54,9 @@ switch ($src[0]) {
     case '/member/deleteAdminUserManage' :
         require $user_url . '/deleteAdminUserManage.php';
         break;
+    case '/member/readTrainerList' :
+        require $user_url . '/readTrainerList.php';
+        break;
     case '/storage' :
         require $home_url . '/storage.php';
         break;
