@@ -64,7 +64,7 @@ if (in_array($extension, $allowedExts)//허용된 확장자만 업로드 하도�
         $image = "ai-fitness/".$image_file_name;
 
 
-        $sql = "insert into member(email, pwd, name, height, weight, gender, birth, muscle, fat, intro, image, trainer, admin, alarm) values('$email', '$pwd', '$name', '$height', '$weight', '$gender','$birth', '$muscle', '$fat', '$intro', '$image', '$trainer', '$admin', '$alarm')";
+        $sql = "insert into member(email, pwd, name, height, weight, gender, birth, muscle, fat, intro, image_from_storage.php, trainer, admin, alarm) values('$email', '$pwd', '$name', '$height', '$weight', '$gender','$birth', '$muscle', '$fat', '$intro', '$image', '$trainer', '$admin', '$alarm')";
         $stmt = $db->prepare($sql);
         $result = $stmt->execute();
 
