@@ -5,30 +5,21 @@ include "dbconfig.php";
 use Google\Cloud\Storage\StorageClient;
 
 
-$trainer_id = $_POST[trainer_id]; //$_POST[name];
-$title = $_POST[title]; //$_POST[name];
-$thumb_img = $_POST[thumb_img];
-$video ="ai-fitness/".$image_file_name;
-
-
-//1번 방법
-$sql = "INSERT INTO trainer_video (trainer_id, thumb_img, video, title) VALUES ('$trainer_id','$thumb_img','$video','$title')";
-//echo $sql."<br>";
-
 $allowedExts = array("jpg", "jpeg", "gif", "png", "mp3", "mp4", "wma");
-$extension = pathinfo($_FILES['myFile']['name'], PATHINFO_EXTENSION);
-$video_file_name =  "tr_video/".$_FILES["myFile"]["name"];
+$extension = pathinfo($_FILES['videoFile']['name'], PATHINFO_EXTENSION);
+$video_file_name =  "tr_video/".$_FILES["videoFile"]["name"];
+$thumb_file_name =  "tr_thumb_img/".$_FILES["imgFile"]["name"];
 
 
-    if ($_FILES["myFile"]["error"] > 0) {
+    if ($_FILES["videoFile"]["error"] > 0) {
 
-        echo "Return Code: " . $_FILES["myFile"]["error"] . "<br />";
+        echo "Return Code: " . $_FILES["videoFile"]["error"] . "<br />";
     } else {
         echo "Upload: " . $video_file_name. "<br />";
-        echo "Type: " . $_FILES["myFile"]["type"] . "<br />";
-        echo "Size: " . ($_FILES["myFile"]["size"] / 1024) . " Kb<br />";
-        echo "Temp file: " . $_FILES["myFile"]["tmp_name"] . "<br />";
-        echo "  37line ";
+        echo "Type: " . $_FILES["videoFile"]["type"] . "<br />";
+        echo "Size: " . ($_FILES["videoFile"]["size"] / 1024) . " Kb<br />";
+        echo "Temp file: " . $_FILES["videoFile"]["tmp_name"] . "<br />";
+//        echo "  37line ";
         //echo file_get_contents( $_FILES["myFile"]["tmp_name"])."<br>";
     //   $f =  fopen($_FILES["myFile"]["tmp_name"], 'w+');
      //  fwrite($f,"aa");
@@ -41,9 +32,12 @@ $video_file_name =  "tr_video/".$_FILES["myFile"]["name"];
         ]);
 
         $bucket = $storage->bucket('ai-fitness');
-         $bucket->upload(fopen($_FILES["myFile"]["tmp_name"], 'r'), [
+         $bucket->upload(fopen($_FILES["videoFile"]["tmp_name"], 'r'), [
             'name' => $video_file_name
          ]);
+        $bucket->upload(fopen($_FILES["imgFile"]["tmp_name"], 'r'), [
+            'name' => $thumb_file_name
+        ]);
 /*
         if (file_exists("/static/video/" . $_FILES["myFile"]["name"])) {
             echo $_FILES["myFile"]["name"] . " already exists. ";
@@ -58,10 +52,9 @@ $video_file_name =  "tr_video/".$_FILES["myFile"]["name"];
         }
 */
         //db에도 업로드
-        $id = 2;
         $trainer_id = $_POST[trainer_id]; //$_POST[name];
         $title = $_POST[title]; //$_POST[name];
-        $thumb_img = $_POST[thumb_img];
+        $thumb_img = "ai-fitness/".$thumb_file_name;
         $video ="ai-fitness/".$video_file_name;
 
 
