@@ -2,23 +2,10 @@
 <?php
 
 include "dbconfig.php";
-/*
-$sql = 'SELECT * from member';
-$stmt = $db->prepare($sql);
-$stmt->execute();
-$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+$title = $_POST['title'];
 
-if ($results->rowCount() > 0)
-{
-  foreach ($results as $row){
-        echo $row[id]."/".$row[name]."<br>";
-}
-    // Encode the array to JSON and output the results
-    //echo json_encode($results);
-}
-*/
-$results = $db->query("SELECT period, equip, gender, level, max, intro from exr_program where title = '체지방 태우기'");
+$results = $db->query("SELECT period, equip, gender, level, max, intro from exr_program where title = '$title'");
 $result_array = array();
 if ($results->rowCount() > 0)
 {
@@ -28,6 +15,6 @@ if ($results->rowCount() > 0)
 
 }
 
-echo json_encode(array("result"=>$result_array));
+echo json_encode($result_array);
 
 ?>
