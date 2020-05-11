@@ -69,6 +69,9 @@ switch ($src[0]) {
     case '/video/tr_video_create' :
         require $video_url . '/tr_video_create.php';
         break;
+    case '/video/tr_video_read' :
+        require $video_url . '/tr_video_read.php';
+        break;
     default:
         http_response_code(404);
         require __DIR__ . '/src/error.html';

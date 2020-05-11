@@ -6,12 +6,12 @@ include "dbconfig.php";
 //db에도 업로드
 $id = $_POST[id];
 $trainer_id = $_POST[trainer_id]; //$_POST[name];
-$title = $_POST[title]; //$_POST[name];
 
-if ($id) {
-    $sql = "SELECT * FROM trainer_video WHERE id = '$id')";
-} else if ($trainer_id) {
-    $sql = "SELECT * FROM trainer_video WHERE trainer_id = '$trainer_id')";
+
+if ($id!=null) {
+    $sql = "SELECT * FROM trainer_video WHERE id = $id";
+} else if ($trainer_id!=null) {
+    $sql = "SELECT * FROM trainer_video WHERE trainer_id = $trainer_id";
 }
 
 $results = $db->query($sql);
