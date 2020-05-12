@@ -33,19 +33,7 @@ if (in_array($extension, $allowedExts)//허용된 확장자만 업로드 하도�
         $bucket->upload(fopen($_FILES["myFile"]["tmp_name"], 'r'), [
             'name' => $image_file_name
         ]);
-        /*
-                if (file_exists("/static/video/" . $_FILES["myFile"]["name"])) {
-                    echo $_FILES["myFile"]["name"] . " already exists. ";
-                } else {
-                    $moved = move_uploaded_file( $_FILES["myFile"]["tmp_name"], "/static/video/" . $_FILES["myFile"]["name"]);
-                    echo "Stored in: " . "/static/video/" . $_FILES["myFile"]["name"];
-                    if ($moved) {
-                        echo "Successfully uploaded";
-                    } else {
-                        echo "Not uploaded because of error #" . $_FILES["myFile"]["error"];
-                    }
-                }
-        */
+
 
         //db에도 업로드
         $email = $_POST['email'];
