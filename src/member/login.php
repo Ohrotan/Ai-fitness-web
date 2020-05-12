@@ -39,7 +39,7 @@ echo json_encode($result_array);
 //    //**********여기 이하는 수행이 안되는 이유를 모르겠음
 //
 //    //쿼리 생성
-//    //$stmt = $db->prepare("SELECT id, pwd, name, height, weight, gender, birth, muscle, fat, intro, image_from_storage.php, trainer, andmin, alarm  FROM Member WHERE username = ? AND password = ?");
+//    //$stmt = $db->prepare("SELECT id, pwd, name, height, weight, gender, birth, muscle, fat, intro, image, trainer, andmin, alarm  FROM Member WHERE username = ? AND password = ?");
 //    $stmt =  $db->stmt_init();
 //    $stmt->prepare("SELECT id, pwd FROM member WHERE id = ? AND pwd = ?");
 //    $stmt->bind_param("ss", $email, $password);
@@ -71,7 +71,7 @@ echo json_encode($result_array);
 //            'muscle' => 0,
 //            'fat' => 0,
 //            'intro' => null,
-//            'image_from_storage.php' => null,
+//            'image' => null,
 //            'trainer' => 0,
 //            'andmin' => 0,
 //            'alarm' => 0
