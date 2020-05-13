@@ -69,6 +69,9 @@ switch ($src[0]) {
     case '/member/setProfile' :
         require $user_url . '/setProfile.php';
         break;
+    case '/member/setPwd' :
+        require $user_url . '/setPwd.php';
+        break;
     case '/storage' :
         require $home_url . '/storage.php';
         break;
