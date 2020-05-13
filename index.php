@@ -63,6 +63,9 @@ switch ($src[0]) {
     case '/member/readTrainerRating' :
         require $user_url . '/readTrainerRating.php';
         break;
+    case '/member/readTrainerData' :
+        require $user_url . '/readTrainerData.php';
+        break;
     case '/member/setAlarm' :
         require $user_url . '/setAlarm.php';
         break;
