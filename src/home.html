@@ -124,7 +124,7 @@
 <form action="/day_video/read" method="post">
     day video read (그냥(null) 전송하면 모든 day video 출력, 아이디만 주면 day video 1개 출력, day id만 주면 그 일별 프로그램에 해당하는 비디오 전부출력)<br>
     id: <input type="number" name="id"><br>
-    day_id: <input type="number" name="exr_id"><br>
+    day_id: <input type="number" name="day_id"><br>
     <input type="submit">
 </form>
 <br>
@@ -164,8 +164,17 @@
     id: <input type="number" name="id"><br>
     <input type="submit">
 </form>
+<br>
+<form action="/day_exr/update" method="post">
+    day_exr update
+    id: <input type="number" name="id"><br>
+    title: <input type="text" name="title"><br>
+    seq: <input type="number" name="seq"><br>
+    intro: <input type="text" name="intro"><br>
+    <input type="submit">
+</form>
 <hr>
-<form action="/exr/create_exr_program" method="post">
+<form action="/exr/create" method="post">
     exr create
     trainer_id: <input type="number" name="trainer_id"><br>
     title: <input type="text" name="title"><br>
@@ -179,20 +188,20 @@
 </form>
 
 <br>
-<form action="/exr/read_exr_program" method="post">
+<form action="/exr/read" method="post">
     exr read (그냥(null) 전송하면 모든 프로그램 출력, 아이디만 주면 프로그램 1개 출력, 트레이너아디만 주면 그 트레이너에 해당하는 프로그램 전부출력)<br>
     id: <input type="number" name="id"><br>
     trainer_id: <input type="number" name="trainer_id"><br>
     <input type="submit">
 </form>
 <br>
-<form action="/exr/delete_exr_program" method="post">
+<form action="/exr/delete" method="post">
     exr delete
     id: <input type="number" name="id"><br>
     <input type="submit">
 </form>
 <br>
-<form action="/exr/update_exr_program" method="post">
+<form action="/exr/update" method="post">
     exr update
     id: <input type="number" name="id"><br>
     title: <input type="text" name="title"><br>
