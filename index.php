@@ -38,17 +38,17 @@ switch ($src[0]) {
     case '/member/delete' :
         require $user_url . '/delete.php';
         break;
-    case '/member/login' :
-        require $user_url . '/login.php';
+    case '/member/read_login' :
+        require $user_url . '/read_login.php';
         break;
-    case '/member/signup' :
-        require $user_url . '/signup.php';
+    case '/member/create_signup' :
+        require $user_url . '/create_signup.php';
         break;
-    case '/member/homeData' :
-        require $user_url . '/homeData.php';
+    case '/member/read_home_data' :
+        require $user_url . '/read_home_data.php';
         break;
-    case '/member/chatList' :
-        require $user_url . '/chatList.php';
+    case '/member/read_chat_list' :
+        require $user_url . '/read_chat_list.php';
         break;
     case '/member/readAdminUserManage' :
         require $user_url . '/readAdminUserManage.php';
