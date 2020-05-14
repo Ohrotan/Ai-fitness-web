@@ -85,16 +85,16 @@ switch ($src[0]) {
         break;
 
 
-    case '/exr/read_exr_program' :
+    case '/exr/read' :
         require $exr_url . '/read.php';
         break;
-    case '/exr/create_exr_program' :
+    case '/exr/create' :
         require $exr_url . '/create.php';
         break;
-    case '/exr/delete_exr_program' :
+    case '/exr/delete' :
         require $exr_url . '/delete.php';
         break;
-    case '/exr/update_exr_program' :
+    case '/exr/update' :
         require $exr_url . '/update.php';
         break;
 
