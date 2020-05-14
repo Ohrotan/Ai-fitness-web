@@ -1,15 +1,16 @@
 <?php
 include "dbconfig.php";
 
-$id = $_POST['id'];
-$title = $_POST['title'];
-$seq = $_POST['seq'];
-$intro = $_POST['intro'];
+$member_exr_history_id = (int)$_POST['member_exr_history_id'];
+$feedback = $_POST['feedback'];
 
 //1번 방법
 
-$sql = "UPDATE day_program SET title ='$title', seq= '$seq', intro= '$intro' WHERE id = $id";
+$result_array = array();
+$sql = "update member_exr_history set feedback = '$feedback' where id = '$member_exr_history_id'";
 $stmt = $db->prepare($sql);
 $result = $stmt->execute();
-echo $result;
+array_push($result_array, $results);
+
+echo json_encode($result_array);
 ?>
