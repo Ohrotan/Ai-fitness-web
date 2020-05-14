@@ -22,9 +22,7 @@ switch ($src[0]) {
     case '/member/create' :
         require $user_url . '/create.php';
         break;
-    case '/exr/read_exr_detail' :
-        require $exr_url . '/read_exr_detail.php';
-        break;
+
     case '/member/read' :
         require $user_url . '/read.php';
         break;
@@ -75,6 +73,18 @@ switch ($src[0]) {
         break;
     case '/member/setPwd' :
         require $user_url . '/setPwd.php';
+        break;
+    case '/exr/read_exr_program' :
+        require $exr_url . '/read_exr_program.php';
+        break;
+    case '/exr/create_exr_program' :
+        require $exr_url . '/create_exr_program.php';
+        break;
+    case '/exr/delete_exr_program' :
+        require $exr_url . '/delete_exr_program.php';
+        break;
+    case '/exr/update_exr_program' :
+        require $exr_url . '/update_exr_program.php';
         break;
     case '/storage' :
         require $home_url . '/storage.php';
