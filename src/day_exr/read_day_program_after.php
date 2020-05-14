@@ -1,7 +1,7 @@
 <?php
 include "dbconfig.php";
 
-$uid = (int)$_POST('uid');
+$uid = (int)$_POST['uid'];
 $day_program_id = (int)$_POST['day_program_id'];
 
 $result_array = array();
