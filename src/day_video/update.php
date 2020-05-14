@@ -8,7 +8,7 @@ $sets = $_POST['sets'];
 $seq = $_POST['seq'];
 
 //1번 방법
-$sql = "UPDATE exr_program SET video_id ='$video_id', counts= '$counts', sets= '$sets', seq ='$seq' WHERE id = $id";
+$sql = "UPDATE day_program_video SET video_id ='$video_id', counts= '$counts', sets= '$sets', seq ='$seq' WHERE id = $id";
 $stmt = $db->prepare($sql);
 $result = $stmt->execute();
 echo $result;
