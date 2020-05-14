@@ -13,6 +13,7 @@ $home_url = __DIR__ . '/src';
 $user_url = $home_url . "/member";
 $video_url = $home_url . "/video";
 $exr_url = $home_url . "/exr";
+$day_exr_url = $home_url . "/day_exr";
 
 switch ($src[0]) {
     case '':
@@ -87,6 +88,11 @@ switch ($src[0]) {
         break;
     case '/exr/update_exr_program' :
         require $exr_url . '/update_exr_program.php';
+        break;
+
+
+    case '/day_exr/read_day_program':
+        require $day_exr_url . '/read_day_program.php';
         break;
 
 
