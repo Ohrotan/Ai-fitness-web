@@ -1,6 +1,6 @@
 <?php
 
-$day_program_id = $_POST['day_program_id'];
+$day_program_id = (int)$_POST['day_program_id'];
 
 $result_array = array();
 
