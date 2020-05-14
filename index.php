@@ -12,6 +12,7 @@ $src = explode("?", $request);
 $home_url = __DIR__ . '/src';
 $user_url = $home_url . "/member";
 $video_url = $home_url . "/video";
+$exr_url = $home_url . "/exr";
 
 switch ($src[0]) {
     case '':
@@ -21,8 +22,8 @@ switch ($src[0]) {
     case '/member/create' :
         require $user_url . '/create.php';
         break;
-    case '/member/exrDetail' :
-        require $user_url . '/exrDetail.php';
+    case '/exr/read_exr_detail' :
+        require $exr_url . '/read_exr_detail.php';
         break;
     case '/member/read' :
         require $user_url . '/read.php';
