@@ -9,10 +9,7 @@ $exr_id = $_POST[exr_id];
 $results0 = $db->query("SELECT title, period, equip, gender, level, max FROM exr_program WHERE id = '$exr_id'");
 
 //현재 회원 수
-$results1 = $db->query("SELECT count(MP.mem_id) AS cur_member_num 
-FROM member_reg_program MP join exr_program EP 
-WHERE EP.id = '$exr_id' AND MP.exr_id = '$exr_id' AND MP.end_date > CURDATE()
-GROUP BY EP.id");
+$results1 = $db->query("select curMemberNum from program_cur_member_num where id = '$exr_id'");
 
 //누적 회원 수
 $results2 = $db->query("SELECT count(MP.mem_id) AS total_member_num 
