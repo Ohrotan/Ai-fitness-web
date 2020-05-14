@@ -1,4 +1,5 @@
 <?php
+include "dbconfig.php";
 
 $day_program_id = (int)$_POST['day_program_id'];
 
