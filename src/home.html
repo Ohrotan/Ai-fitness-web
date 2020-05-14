@@ -16,54 +16,7 @@
     <input type="submit">
 </form>
 <br>
-<form action="/exr/create_exr_program" method="post">
-    exr create
-    trainer_id: <input type="number" name="trainer_id"><br>
-    title: <input type="text" name="title"><br>
-    period: <input type="number" name="period"><br>
-    gender(FMA): <input type="text" name="gender"><br>
-    level: <input type="number" name="level"><br>
-    max: <input type="number" name="max"><br>
-    intro: <input type="text" name="intro"><br>
-    <input type="submit">
-</form>
-<br>
-<form action="/exr/delete_exr_program" method="post">
-    exr create
-    trainer_id: <input type="number" name="trainer_id"><br>
-    title: <input type="text" name="title"><br>
-    period: <input type="number" name="period"><br>
-    gender(FMA): <input type="text" name="gender"><br>
-    level: <input type="number" name="level"><br>
-    max: <input type="number" name="max"><br>
-    intro: <input type="text" name="intro"><br>
-    <input type="submit">
-</form>
-<br>
-<form action="/exr/read_exr_program" method="post">
-    exr read (그냥(null) 전송하면 모든 프로그램 출력, 아이디만 주면 프로그램 1개 출력, 트레이너아디만 주면 그 트레이너에 해당하는 프로그램 전부출력)
-    id: <input type="number" name="id"><br>
-    trainer_id: <input type="number" name="trainer_id"><br>
-    <input type="submit">
-</form>
-<br>
-<form action="/exr/delete_exr_program" method="post">
-    exr delete
-    id: <input type="number" name="id"><br>
-    <input type="submit">
-</form>
-<br>
-<form action="/exr/update_exr_program" method="post">
-    exr update
-    id: <input type="number" name="id"><br>
-    title: <input type="text" name="title"><br>
-    period: <input type="number" name="period"><br>
-    gender(FMA): <input type="text" name="gender"><br>
-    level: <input type="number" name="level"><br>
-    max: <input type="number" name="max"><br>
-    intro: <input type="text" name="intro"><br>
-    <input type="submit">
-</form>
+
 <!--
 <div>비디오 업로드 테스트</div>
 <form action="/video/tr_video_create" method="post" enctype="multipart/form-data">
@@ -152,7 +105,45 @@
 
     <input type="submit">
 </form>
-
+<br>
+<form action="/exr/create_exr_program" method="post">
+    exr create
+    trainer_id: <input type="number" name="trainer_id"><br>
+    title: <input type="text" name="title"><br>
+    period: <input type="number" name="period"><br>
+    equip: <input type="text" name="equip"><br>
+    gender(FMA): <input type="text" name="gender"><br>
+    level: <input type="number" name="level"><br>
+    max: <input type="number" name="max"><br>
+    intro: <input type="text" name="intro"><br>
+    <input type="submit">
+</form>
+<br>
+<form action="/exr/read_exr_program" method="post">
+    exr read (그냥(null) 전송하면 모든 프로그램 출력, 아이디만 주면 프로그램 1개 출력, 트레이너아디만 주면 그 트레이너에 해당하는 프로그램 전부출력)
+    id: <input type="number" name="id"><br>
+    trainer_id: <input type="number" name="trainer_id"><br>
+    <input type="submit">
+</form>
+<br>
+<form action="/exr/delete_exr_program" method="post">
+    exr delete
+    id: <input type="number" name="id"><br>
+    <input type="submit">
+</form>
+<br>
+<form action="/exr/update_exr_program" method="post">
+    exr update
+    id: <input type="number" name="id"><br>
+    title: <input type="text" name="title"><br>
+    period: <input type="number" name="period"><br>
+    equip: <input type="text" name="equip"><br>
+    gender(FMA): <input type="text" name="gender"><br>
+    level: <input type="number" name="level"><br>
+    max: <input type="number" name="max"><br>
+    intro: <input type="text" name="intro"><br>
+    <input type="submit">
+</form>
 
 </body>
 </html>
