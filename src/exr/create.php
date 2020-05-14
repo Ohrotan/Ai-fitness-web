@@ -15,5 +15,7 @@ $sql = "INSERT INTO exr_program (trainer_id, title, period, equip, gender, level
     . "VALUES ('$trainer_id','$title','$period','$equip','$gender','$level','$max','$intro')";
 $stmt = $db->prepare($sql);
 $result = $stmt->execute();
-echo $result;
+
+$result = $db->query("SELECT id FROM exr_program WHERE trainer_id = $trainer_id AND title = '$title' AND intro = '$intro'");
+echo json_encode($result->fetchObject());
 ?>

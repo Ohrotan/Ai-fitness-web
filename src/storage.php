@@ -22,19 +22,22 @@ echo $object->downloadAsString();
 
 
 // Upload a file to the bucket.
-$bucket->upload(
-    fopen('/srv/test.txt', 'r')
+/*$bucket->upload(
+   fopen('/srv/test.txt', 'r')
 );
+*/
 
 
 // Using Predefined ACLs to manage object permissions, you may
 // upload a file and give read access to anyone with the URL.
+/*
 $bucket->upload(
     fopen('/srv/test.txt', 'r'),
     [
         'predefinedAcl' => 'publicRead'
     ]
 );
+*/
 
 
 
