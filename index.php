@@ -16,6 +16,7 @@ $exr_url = $home_url . "/exr";
 $day_exr_url = $home_url . "/day_exr";
 $day_video_url = $home_url ."/day_video";
 
+
 switch ($src[0]) {
     case '':
     case '/' :
@@ -117,6 +118,7 @@ switch ($src[0]) {
     case '/day_video/update' :
         require $day_video_url . '/update.php';
         break;
+
 
     case '/video/create_tr_video' :
         require $video_url . '/create_tr_video.php';
