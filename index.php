@@ -53,29 +53,29 @@ switch ($src[0]) {
     case '/member/read_chat_list' :
         require $user_url . '/read_chat_list.php';
         break;
-    case '/member/readAdminUserManage' :
-        require $user_url . '/readAdminUserManage.php';
+    case '/member/read_admin_user_manage' :
+        require $user_url . '/read_admin_user_manage.php';
         break;
-    case '/member/deleteAdminUserManage' :
-        require $user_url . '/deleteAdminUserManage.php';
+    case '/member/delete_admin_user_manage' :
+        require $user_url . '/delete_admin_user_manage.php';
         break;
-    case '/member/readTrainerList' :
-        require $user_url . '/readTrainerList.php';
+    case '/member/read_trainer_list' :
+        require $user_url . '/read_trainer_list.php';
         break;
-    case '/member/readTrainerRating' :
-        require $user_url . '/readTrainerRating.php';
+    case '/member/read_trainer_rating' :
+        require $user_url . '/read_trainer_rating.php';
         break;
-    case '/member/readTrainerData' :
-        require $user_url . '/readTrainerData.php';
+    case '/member/read_trainer_data' :
+        require $user_url . '/read_trainer_data.php';
         break;
-    case '/member/setAlarm' :
-        require $user_url . '/setAlarm.php';
+    case '/member/set_alarm' :
+        require $user_url . '/set_alarm.php';
         break;
-    case '/member/setProfile' :
-        require $user_url . '/setProfile.php';
+    case '/member/set_profile' :
+        require $user_url . '/set_profile.php';
         break;
-    case '/member/setPwd' :
-        require $user_url . '/setPwd.php';
+    case '/member/set_pwd' :
+        require $user_url . '/set_pwd.php';
         break;
 
 
