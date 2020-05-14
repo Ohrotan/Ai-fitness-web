@@ -27,10 +27,10 @@ switch ($src[0]) {
         require $user_url . '/read.php';
         break;
     case '/member/readmemexrprogram' :
-        require $user_url . '/readmemexrprogram.php';
+        require $user_url . '/read_mem_exr_program.php';
         break;
     case '/member/memberexrprogram' :
-        require $user_url . '/memberexrprogram.php';
+        require $user_url . '/member_exr_program.php';
         break;
     case '/member/update' :
         require $user_url . '/update.php';
