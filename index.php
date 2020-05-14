@@ -14,6 +14,8 @@ $user_url = $home_url . "/member";
 $video_url = $home_url . "/video";
 $exr_url = $home_url . "/exr";
 $day_exr_url = $home_url . "/day_exr";
+$day_video_url = $home_url ."/day_video";
+
 
 switch ($src[0]) {
     case '':
@@ -78,21 +80,43 @@ switch ($src[0]) {
 
 
     case '/exr/read_exr_program' :
-        require $exr_url . '/read_exr_program.php';
+        require $exr_url . '/read.php';
         break;
     case '/exr/create_exr_program' :
-        require $exr_url . '/create_exr_program.php';
+        require $exr_url . '/create.php';
         break;
     case '/exr/delete_exr_program' :
-        require $exr_url . '/delete_exr_program.php';
+        require $exr_url . '/delete.php';
         break;
     case '/exr/update_exr_program' :
-        require $exr_url . '/update_exr_program.php';
+        require $exr_url . '/update.php';
         break;
 
 
-    case '/day_exr/read_day_program':
-        require $day_exr_url . '/read_day_program.php';
+    case '/day_exr/create' :
+        require $day_exr_url . '/create.php';
+        break;
+    case '/day_exr/delete' :
+        require $day_exr_url . '/delete.php';
+        break;
+    case '/day_exr/read' :
+        require $day_exr_url . '/read.php';
+        break;
+    case '/day_exr/update' :
+        require $day_exr_url . '/update.php';
+        break;
+
+    case '/day_video/create' :
+        require $day_video_url . '/create.php';
+        break;
+    case '/day_video/delete' :
+        require $day_video_url . '/delete.php';
+        break;
+    case '/day_video/read' :
+        require $day_video_url . '/read.php';
+        break;
+    case '/day_video/update' :
+        require $day_video_url . '/update.php';
         break;
 
 

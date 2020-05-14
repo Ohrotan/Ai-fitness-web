@@ -4,7 +4,7 @@ include "dbconfig.php";
 $id = $_POST[id];
 
 //1번 방법
-$sql = "DELETE FROM exr_program WHERE id = '$id'";
+$sql = "DELETE FROM day_program_video WHERE id = '$id'";
 $stmt = $db->prepare($sql);
 $result = $stmt->execute();
 echo $result;
