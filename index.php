@@ -12,6 +12,7 @@ $src = explode("?", $request);
 $home_url = __DIR__ . '/src';
 $user_url = $home_url . "/member";
 $video_url = $home_url . "/video";
+$exr_url = $home_url . "/exr";
 
 switch ($src[0]) {
     case '':
@@ -21,9 +22,7 @@ switch ($src[0]) {
     case '/member/create' :
         require $user_url . '/create.php';
         break;
-    case '/member/exrDetail' :
-        require $user_url . '/exrDetail.php';
-        break;
+
     case '/member/read' :
         require $user_url . '/read.php';
         break;
@@ -63,17 +62,46 @@ switch ($src[0]) {
     case '/member/readTrainerRating' :
         require $user_url . '/readTrainerRating.php';
         break;
+    case '/member/readTrainerData' :
+        require $user_url . '/readTrainerData.php';
+        break;
     case '/member/setAlarm' :
         require $user_url . '/setAlarm.php';
         break;
+    case '/member/setProfile' :
+        require $user_url . '/setProfile.php';
+        break;
+    case '/member/setPwd' :
+        require $user_url . '/setPwd.php';
+        break;
+
+
+    case '/exr/read_exr_program' :
+        require $exr_url . '/read_exr_program.php';
+        break;
+    case '/exr/create_exr_program' :
+        require $exr_url . '/create_exr_program.php';
+        break;
+    case '/exr/delete_exr_program' :
+        require $exr_url . '/delete_exr_program.php';
+        break;
+    case '/exr/update_exr_program' :
+        require $exr_url . '/update_exr_program.php';
+        break;
+
+
+    case '/video/create_tr_video' :
+        require $video_url . '/create_tr_video.php';
+        break;
+    case '/video/delete_tr_video' :
+        require $video_url . '/delete_tr_video.php';
+        break;
+    case '/video/read_tr_video' :
+        require $video_url . '/read_tr_video.php';
+        break;
+
     case '/storage' :
         require $home_url . '/storage.php';
-        break;
-    case '/video/tr_video_create' :
-        require $video_url . '/tr_video_create.php';
-        break;
-    case '/video/tr_video_read' :
-        require $video_url . '/tr_video_read.php';
         break;
     default:
         http_response_code(404);
