@@ -10,7 +10,12 @@ $result_array = array();
 $sql = "update member_exr_history set feedback = '$feedback' where id = '$member_exr_history_id'";
 $stmt = $db->prepare($sql);
 $result = $stmt->execute();
-array_push($result_array, $results);
+if ($result) {//실행 성공이면
+    array_push($result_array, 1);
+}
+else {
+    array_push($result_array, 0);
+}
 
 echo json_encode($result_array);
 ?>
