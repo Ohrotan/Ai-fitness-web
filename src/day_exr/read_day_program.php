@@ -1,4 +1,5 @@
 <?php
+include "dbconfig.php";
 
 $day_program_id = (int)$_POST['day_program_id'];
 
@@ -22,3 +23,4 @@ if ($results->rowCount() > 0) {
 }
 
 echo json_encode($result_array);
+?>
