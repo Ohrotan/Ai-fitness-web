@@ -74,6 +74,8 @@ switch ($src[0]) {
     case '/member/setPwd' :
         require $user_url . '/setPwd.php';
         break;
+
+
     case '/exr/read_exr_program' :
         require $exr_url . '/read_exr_program.php';
         break;
@@ -86,14 +88,20 @@ switch ($src[0]) {
     case '/exr/update_exr_program' :
         require $exr_url . '/update_exr_program.php';
         break;
+
+
+    case '/video/create_tr_video' :
+        require $video_url . '/create_tr_video.php';
+        break;
+    case '/video/delete_tr_video' :
+        require $video_url . '/delete_tr_video.php';
+        break;
+    case '/video/read_tr_video' :
+        require $video_url . '/read_tr_video.php';
+        break;
+
     case '/storage' :
         require $home_url . '/storage.php';
-        break;
-    case '/video/tr_video_create' :
-        require $video_url . '/tr_video_create.php';
-        break;
-    case '/video/tr_video_read' :
-        require $video_url . '/tr_video_read.php';
         break;
     default:
         http_response_code(404);

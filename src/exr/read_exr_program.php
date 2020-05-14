@@ -3,8 +3,16 @@
 include "dbconfig.php";
 
 $id = $_POST['id'];
+$trainer_id = $_POST['trainer_id'];
 
-$results = $db->query("SELECT * from exr_program where id = '$id'");
+if ($id != null) {
+    $results = $db->query("SELECT * FROM exr_program WHERE id = '$id'");
+} else if ($trainer_id != null) {
+    $results = $db->query("SELECT * FROM exr_program WHERE trainer_id = '$trainer_id'");
+} else {
+    $results = $db->query("SELECT * FROM exr_program");
+}
+
 $result_array = array();
 if ($results->rowCount() > 0) {
     foreach ($results as $row) {
