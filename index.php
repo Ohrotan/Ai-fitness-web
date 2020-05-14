@@ -105,6 +105,9 @@ switch ($src[0]) {
     case '/day_exr/update' :
         require $day_exr_url . '/update.php';
         break;
+    case '/day_exr/read_day_program' :
+        require $day_exr_url . '/read_day_program.php';
+        break;
 
     case '/day_video/create' :
         require $day_video_url . '/create.php';
