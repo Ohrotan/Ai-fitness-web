@@ -12,7 +12,7 @@ $name = $_POST[name];
 
 //$sql = "select name, trainer from member";
 
-$results = $db->query("SELECT name, height, weight, muscle, fat, gender, birth, intro FROM member WHERE name = '$name'");
+$results = $db->query("SELECT id, name, height, weight, muscle, fat, gender, birth, intro FROM member WHERE name = '$name'");
 $result_array = array();
 
 //var_dump($results->rowCount());
