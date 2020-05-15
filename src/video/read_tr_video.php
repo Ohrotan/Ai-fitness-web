@@ -12,6 +12,8 @@ if ($id!=null) {
     $sql = "SELECT * FROM trainer_video WHERE id = $id";
 } else if ($trainer_id!=null) {
     $sql = "SELECT * FROM trainer_video WHERE trainer_id = $trainer_id";
+}else{
+    $sql = "SELECT * FROM trainer_video";
 }
 
 $results = $db->query($sql);
