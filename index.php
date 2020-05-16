@@ -74,6 +74,9 @@ switch ($src[0]) {
     case '/member/read_trainer_program_num' :
         require $user_url . '/read_trainer_program_num.php';
         break;
+    case '/member/read_reg_member' :
+        require $user_url . '/read_reg_member.php';
+        break;
     case '/member/set_alarm' :
         require $user_url . '/set_alarm.php';
         break;
