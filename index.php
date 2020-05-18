@@ -62,6 +62,9 @@ switch ($src[0]) {
     case '/member/delete_admin_user_manage' :
         require $user_url . '/delete_admin_user_manage.php';
         break;
+    case '/member/readtrainerexrprogram' :
+        require $user_url . '/read_trainer_exr_program.php';
+        break;
     case '/member/read_trainer_list' :
         require $user_url . '/read_trainer_list.php';
         break;
