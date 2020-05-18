@@ -77,6 +77,15 @@ switch ($src[0]) {
     case '/member/read_trainer_program_num' :
         require $user_url . '/read_trainer_program_num.php';
         break;
+    case '/member/read_reg_member' :
+        require $user_url . '/read_reg_member.php';
+        break;
+    case '/member/read_member_detail' :
+        require $user_url . '/read_member_detail.php';
+        break;
+    case '/member/read_day_program_title' :
+        require $user_url . '/read_day_program_title.php';
+        break;
     case '/member/set_alarm' :
         require $user_url . '/set_alarm.php';
         break;
@@ -146,6 +155,9 @@ switch ($src[0]) {
         break;
     case '/video/read_tr_video' :
         require $video_url . '/read_tr_video.php';
+        break;
+    case '/video/update_tr_video' :
+        require $video_url . '/update_tr_video_title.php';
         break;
 
     case '/storage' :

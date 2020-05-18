@@ -3,11 +3,16 @@
 include "dbconfig.php";
 
 $id = $_POST[id];
+$exr_id = $_POST[exr_id];
 //$sql = "select name, trainer from member";
 
-$results = $db->query("SELECT id, name, height, weight, muscle, fat, gender, birth, intro, image FROM member WHERE id = '$id'");
+$results = $db->query("SELECT name, gender, birth, height, weight, muscle, fat, intro, image
+FROM member
+WHERE id = '$id';");
 
-$results2 = $db->query("select memberNum from trainer_member_num TM join member M where TM.trainer_id = M.id and id = '$id'");
+$results2 = $db->query("SELECT start_date, end_date
+FROM member_reg_program
+WHERE mem_id = '$id' and exr_id = '$exr_id'");
 $result_array = array();
 //var_dump($results->rowCount());
 //echo("<br>");
