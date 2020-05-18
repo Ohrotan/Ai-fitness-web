@@ -36,7 +36,7 @@ if (in_array($extension, $allowedExts)//허용된 확장자만 업로드 하도�
 
 
         //db에도 업로드
-        $email = $_POST['email'];
+        /*$email = $_POST['email'];
         $pwd = $_POST['pwd'];
         $name = $_POST['name'];
         $birth = $_POST['birth'];
@@ -71,7 +71,7 @@ WHERE id = '$id'";
         $result = $stmt->execute();
 
 
-        echo $result;
+        echo $result;*/
 
 //        $results = $db->query('SELECT * from trainer_video');
 //        $result_array = array();
