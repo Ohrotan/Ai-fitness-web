@@ -153,6 +153,9 @@ switch ($src[0]) {
     case '/video/read_tr_video' :
         require $video_url . '/read_tr_video.php';
         break;
+    case '/video/update_tr_video' :
+        require $video_url . '/update_tr_video_title.php';
+        break;
 
     case '/storage' :
         require $home_url . '/storage.php';
