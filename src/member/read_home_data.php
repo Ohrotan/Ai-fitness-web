@@ -29,7 +29,7 @@ if ($results->rowCount() > 0)
 
 
 //*****트레이너 목록 추가
-$results = $db->query("select id, name, image from trainer limit 4");
+$results = $db->query("SELECT id, name, height, weight, muscle, fat, gender, birth, intro, image, (select memberNum from trainer_member_num TM join member M where TM.trainer_id = M.id and id = MM.id) as memberNum FROM member MM WHERE trainer = 1 limit 4");
 
 array_push($result_array, $results->rowCount());//쿼리 결과 row 개수를 같이 전송함
 
