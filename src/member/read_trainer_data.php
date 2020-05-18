@@ -2,12 +2,12 @@
 
 include "dbconfig.php";
 
-$name = $_POST[name];
+$id = $_POST[id];
 //$sql = "select name, trainer from member";
 
-$results = $db->query("SELECT id, name, height, weight, muscle, fat, gender, birth, intro FROM member WHERE name = '$name'");
+$results = $db->query("SELECT id, name, height, weight, muscle, fat, gender, birth, intro, image FROM member WHERE id = '$id'");
 
-$results2 = $db->query("select memberNum from trainer_member_num TM join member M where TM.trainer_id = M.id and name = '$name'");
+$results2 = $db->query("select memberNum from trainer_member_num TM join member M where TM.trainer_id = M.id and id = '$id'");
 $result_array = array();
 //var_dump($results->rowCount());
 //echo("<br>");

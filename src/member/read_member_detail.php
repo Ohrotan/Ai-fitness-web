@@ -6,7 +6,7 @@ $id = $_POST[id];
 $exr_id = $_POST[exr_id];
 //$sql = "select name, trainer from member";
 
-$results = $db->query("SELECT name, gender, birth, height, weight, muscle, fat, intro
+$results = $db->query("SELECT name, gender, birth, height, weight, muscle, fat, intro, image
 FROM member
 WHERE id = '$id';");
 
