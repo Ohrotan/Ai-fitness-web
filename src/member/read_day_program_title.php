@@ -5,7 +5,7 @@ include "dbconfig.php";
 $exr_id = $_POST[exr_id];
 //$sql = "select name, trainer from member";
 
-$results = $db->query("SELECT title
+$results = $db->query("SELECT id, title
 FROM day_program
 WHERE exr_id = '$exr_id'");
 
