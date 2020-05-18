@@ -36,10 +36,13 @@ if (in_array($extension, $allowedExts)//허용된 확장자만 업로드 하도�
 
 
         //db에도 업로드
-//        $email = $_POST['email'];
-//        $pwd = $_POST['pwd'];
-//        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $pwd = $_POST['pwd'];
+        $name = $_POST['name'];
+        $birth = $_POST['birth'];
         $id = $_POST['id'];
+        $admin = $_POST['admin'];
+        $alarm = $_POST['alarm'];
         $height = $_POST['height'];
         $weight = $_POST['weight'];
         $muscle = $_POST['muscle'];
@@ -48,7 +51,22 @@ if (in_array($extension, $allowedExts)//허용된 확장자만 업로드 하도�
         $trainer = (int)$_POST['trainer'];
         $image = "ai-fitness/".$image_file_name;
 
-        $sql = "UPDATE member SET height = '$height', weight = '$weight', muscle = '$muscle', fat = '$fat', intro = '$intro', trainer = '$trainer', image = '$image' WHERE id = '$id'";
+        $sql = "UPDATE member SET 
+height = '$height', 
+weight = '$weight', 
+muscle = '$muscle', 
+fat = '$fat', 
+intro = '$intro', 
+trainer = '$trainer', 
+image = '$image',
+email - '$email',
+name = '$name',
+pwd = '$pwd',
+id = '$id',
+birth = '$birth',
+admin = '$admin',
+alarm = '$alarm'
+WHERE id = '$id'";
         $stmt = $db->prepare($sql);
         $result = $stmt->execute();
 
