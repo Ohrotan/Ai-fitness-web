@@ -92,6 +92,9 @@ switch ($src[0]) {
     case '/member/set_pwd' :
         require $user_url . '/set_pwd.php';
         break;
+    case '/member/edit_profile' :
+        require $user_url . '/edit_profile.php';
+        break;
 
 
     case '/exr/read' :
