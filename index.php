@@ -89,6 +89,9 @@ switch ($src[0]) {
     case '/member/read_day_program_title' :
         require $user_url . '/read_day_program_title.php';
         break;
+    case '/member/read_feedback' :
+        require $user_url . '/read_feedback.php';
+        break;
     case '/member/set_alarm' :
         require $user_url . '/set_alarm.php';
         break;
