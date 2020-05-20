@@ -6,7 +6,9 @@ $mem_id = $_POST[mem_id];
 $exr_id = $_POST[exr_id];
 //$sql = "select name, trainer from member";
 
-$results = $db->query("select feedback from member_exr_history where mem_id = '$mem_id' and exr_id = '$exr_id';");
+$results = $db->query("select feedback 
+from member_exr_history 
+where mem_id = '$mem_id' and exr_id = '$exr_id';");
 
 //$results2 = $db->query("");
 $result_array = array();
