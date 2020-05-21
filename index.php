@@ -118,6 +118,9 @@ switch ($src[0]) {
     case '/exr/update' :
         require $exr_url . '/update.php';
         break;
+    case '/exr/readexrdetail' :
+        require $exr_url . '/read_exr_detail.php';
+        break;
 
 
     case '/day_exr/create' :
