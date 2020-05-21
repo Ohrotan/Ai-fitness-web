@@ -7,7 +7,7 @@ $seq = $_POST['seq'];
 $intro = $_POST['intro'];
 
 //1번 방법
-$sql = "INSERT INTO day_program (exr_id, title, seq, intro) VALUES ($exr_id,'$title',$seq, '$intro')";
+$sql = "INSERT INTO day_program (exr_id, title, seq, intro, reg_date) VALUES ($exr_id,'$title',$seq, '$intro',ADDTIME(CURRENT_TIMESTAMP,'9:0:0'))";
 
 $stmt = $db->prepare($sql);
 $result = $stmt->execute();

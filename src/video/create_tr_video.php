@@ -59,7 +59,7 @@ $thumb_file_name =  "tr_thumb_img/".$_FILES["imgFile"]["name"];
 
 
 //1번 방법
-        $sql = "INSERT INTO trainer_video (trainer_id, thumb_img, video, title) VALUES ('$trainer_id','$thumb_img','$video','$title')";
+        $sql = "INSERT INTO trainer_video (trainer_id, thumb_img, video, title, reg_date) VALUES ('$trainer_id','$thumb_img','$video','$title',ADDTIME(CURRENT_TIMESTAMP,'9:0:0'))";
         echo $sql."<br>";
         $stmt = $db->prepare($sql);
         $result = $stmt->execute();

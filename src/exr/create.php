@@ -1,6 +1,7 @@
 <?php
 include "dbconfig.php";
 
+$id = $_POST[id];
 $trainer_id = $_POST[trainer_id];
 $title = $_POST[title];
 $period = $_POST[period];
@@ -10,12 +11,20 @@ $level = $_POST[level];
 $max = $_POST[max];
 $intro = $_POST[intro];
 
-//1번 방법
-$sql = "INSERT INTO exr_program (trainer_id, title, period, equip, gender, level, max, intro) "
-    . "VALUES ('$trainer_id','$title','$period','$equip','$gender','$level','$max','$intro')";
-$stmt = $db->prepare($sql);
-$result = $stmt->execute();
+//create new exr program
+if ($id == null || $id == "") {
+    $sql = "INSERT INTO exr_program (trainer_id, title, period, equip, gender, level, max, intro, reg_date) "
+        . "VALUES ('$trainer_id','$title','$period','$equip','$gender','$level','$max','$intro',ADDTIME(CURRENT_TIMESTAMP,'9:0:0'))";
+    $stmt = $db->prepare($sql);
+    $result = $stmt->execute();
 
-$result = $db->query("SELECT id FROM exr_program WHERE trainer_id = $trainer_id AND title = '$title' AND intro = '$intro'");
-echo json_encode($result->fetchObject());
+    $result = $db->query("SELECT id FROM exr_program WHERE trainer_id = $trainer_id AND title = '$title' AND intro = '$intro'");
+    echo json_encode($result->fetchObject());
+}
+else {//update exr program
+    $sql = "UPDATE exr_program SET title ='$title', period= '$period', equip= '$equip', gender ='$gender', level= '$level', max ='$max', intro= '$intro' WHERE id = $id";
+    $stmt = $db->prepare($sql);
+    $result = $stmt->execute();
+    echo $result;
+}
 ?>
