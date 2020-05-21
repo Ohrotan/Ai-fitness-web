@@ -25,6 +25,17 @@ else {//update exr program
     $sql = "UPDATE exr_program SET title ='$title', period= '$period', equip= '$equip', gender ='$gender', level= '$level', max ='$max', intro= '$intro' WHERE id = $id";
     $stmt = $db->prepare($sql);
     $result = $stmt->execute();
-    echo $result;
+
+    //after updating, return day_exr data
+    $results = $db->query("SELECT * FROM day_program WHERE exr_id = '$id' ORDER BY seq");
+    $result_array = array();
+    if ($results->rowCount() > 0) {
+        foreach ($results as $row) {
+            array_push($result_array, $row);
+        }
+
+    }
+
+    echo json_encode($result_array);
 }
 ?>
