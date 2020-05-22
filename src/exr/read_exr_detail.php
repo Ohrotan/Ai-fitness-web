@@ -3,9 +3,10 @@
 
 include "dbconfig.php";
 
-$id = $_POST['id'];
+$mem_id = $_POST['mem_id'];
+$exr_id = $_POST['exr_id'];
 
-$results = $db->query("SELECT * from exr_program left join day_title_intro as d on exr_program.id = d.exr_id join mem_cnt_view on exr_program.id = mem_cnt_view.exr_id where exr_program.id = '$id'");
+$results = $db->query("SELECT * from exr_program left join day_title_intro as d on exr_program.id = d.exr_id join mem_cnt_view on exr_program.id = mem_cnt_view.exr_id left join (SELECT mem_id, exr_id as e_id from member_reg_program) as m on m.mem_id = '$mem_id' and m.e_id = exr_program.id where exr_program.id = '$exr_id'");
 $result_array = array();
 if ($results->rowCount() > 0)
 {

@@ -104,6 +104,9 @@ switch ($src[0]) {
     case '/member/edit_profile' :
         require $user_url . '/edit_profile.php';
         break;
+    case '/member/insertmemreg' :
+        require $user_url . '/insert_mem_reg.php';
+        break;
 
 
     case '/exr/read' :
