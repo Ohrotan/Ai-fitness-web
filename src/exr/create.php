@@ -12,7 +12,7 @@ $max = $_POST[max];
 $intro = $_POST[intro];
 
 //create new exr program
-if ($id == null || $id == "") {
+if ($id == null || $id == "0") {
     $sql = "INSERT INTO exr_program (trainer_id, title, period, equip, gender, level, max, intro, reg_date) "
         . "VALUES ('$trainer_id','$title','$period','$equip','$gender','$level','$max','$intro',ADDTIME(CURRENT_TIMESTAMP,'9:0:0'))";
     $stmt = $db->prepare($sql);
