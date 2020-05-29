@@ -19,4 +19,4 @@ if ($results->rowCount() > 0)
 
 }
 
-echo json_encode(array($result_array));
+echo json_encode($result_array);
