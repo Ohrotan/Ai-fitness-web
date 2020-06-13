@@ -10,7 +10,10 @@ $result_array = array();
 
 
 if ($trainer === 1) { //요청 유저가 트레이너라면 트레이너가 등록한 프로그램 중에서 피드백 대기중인 정보를 전송함.
-    $results = $db->query("select e.id, name, title from trainer as t join exr_program as e on t.id = e.trainer_id where t.id = '$user_id' limit 3");
+    $results = $db->query("select meh.exr_id as id, (select name from member where id = ep.trainer_id) as name, ep.title
+from member_exr_history meh join member m on meh.mem_id = m.id join exr_program ep on meh.exr_id = ep.id join day_program dp on meh.day_id = dp.id
+where ep.trainer_id = '$user_id' and meh.feedback is NULL
+limit 3");
 }
 else {//트레이너가 아니라면 신청한 프로그램 정보를 전송함.
     $results = $db->query("select e.id, t.name, e.title from member_reg_program m join (trainer t join exr_program e on t.id = e.trainer_id) on e.id = m.exr_id  where m.mem_id = '$user_id' limit 3");
