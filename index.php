@@ -164,7 +164,9 @@ switch ($src[0]) {
         require $day_video_url . '/update.php';
         break;
 
-
+    case '/video/create_mem_video' :
+        require $video_url . '/create_mem_video.php';
+        break;
     case '/video/create_tr_video' :
         require $video_url . '/create_tr_video.php';
         break;
