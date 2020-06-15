@@ -14,7 +14,7 @@ if ($results->rowCount() > 0) {
         array_push($result_array, $row);
     }
 
-    $results = $db->query("select meh.id, dpv.counts, dpv.sets, meh.thumb_img, meh.video, tv.title, meh.feedback, meh.time, meh.date from member_exr_history meh join day_program dp on meh.day_id = dp.id join day_program_video dpv on meh.day_program_video_id = dpv.id join trainer_video tv on dpv.video_id = tv.id where meh.mem_id = '$mem_id' and meh.day_id = '$day_program_id' order by dpv.seq");
+    $results = $db->query("select meh.id, dpv.counts, dpv.sets, meh.thumb_img, meh.video, tv.title, meh.feedback, meh.time, meh.date from member_exr_history meh join day_program dp on meh.day_id = dp.id join day_program_video dpv on dp.id = dpv.day_id join trainer_video tv on dpv.video_id = tv.id where meh.mem_id = '$mem_id' and meh.day_id = '$day_program_id' order by dpv.seq");
     array_push($result_array, $results->rowCount());
     if ($results->rowCount() > 0) {
         foreach ($results as $row) {
