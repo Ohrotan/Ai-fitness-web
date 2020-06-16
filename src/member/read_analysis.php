@@ -8,7 +8,7 @@ $results = $db->query("SELECT analysis
 FROM trainer_video
 WHERE id IN (SELECT video_id
              FROM day_program_video
-             WHERE day_id = '$day_id');");
+             WHERE day_id = '$day_id')");
 $result_array = array();
 
 if ($results->rowCount() > 0)

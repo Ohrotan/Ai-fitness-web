@@ -284,5 +284,21 @@
     <input type="submit" name="submit" value="Submit"/>
 </form>
 
+<hr>
+<div>회원 비디오 업로드 테스트</div>
+<form action="/video/create_mem_video" method="post" enctype="multipart/form-data">
+    mem_id: <input type="text" name="mem_id" value="99"><br>
+    exr_id: <input type="text" name="exr_id" value="99"><br>
+    day_id: <input type="text" name="day_id" value="99"><br>
+    day_program_video_id: <input type="text" name="day_program_video_id" value="99"><br>
+    time: <input type="text" name="time" value="01:01:01"><br>
+    thumb_img: <input type="text" name="thumb_img" value="test_thumb_img_path"><br>
+    <label for="myFile"><span>Filename:</span></label>
+    <input type="file" name="videoFile" id="videoFile"/>
+    <input type="file" name="imgFile" id="imgFile"/>
+    <br/>
+    <input type="submit" name="submit" value="Submit"/>
+</form>
+
 </body>
 </html>
