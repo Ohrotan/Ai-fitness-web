@@ -51,7 +51,7 @@ if ($_FILES["videoFile"]["error"] > 0) {
 
 
 //1번 방법
-    $sql = "INSERT INTO member_exr_history (mem_id,exr_id,day_id,day_program_video_id, thumb_img, video, time, reg_date) ".
+    $sql = "INSERT INTO member_exr_history (mem_id,exr_id,day_id,day_program_video_id, thumb_img, video, time, date) ".
         "VALUES ('$mem_id','$exr_id','$day_id','$day_program_video_id','$thumb_img','$video','$time',ADDTIME(CURRENT_TIMESTAMP,'9:0:0'))";
     echo $sql . "<br>";
     $stmt = $db->prepare($sql);
@@ -71,4 +71,3 @@ if ($_FILES["videoFile"]["error"] > 0) {
     echo json_encode($result_array);
 
 }
-
